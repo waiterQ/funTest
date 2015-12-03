@@ -1,9 +1,9 @@
 package main
 
 import (
-	"auth"
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
+	"github.com/waiterQ/funTest/gen-go/auth"
 	"os"
 )
 
