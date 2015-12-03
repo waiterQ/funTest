@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>auth</title>
+		<script type="text/javascript" src="gen-js/authSer.js"></script>
+		<script type="text/javascript" src="thrift.js"></script>
+		<script type="text/javascript">
+			function go() {
+				var transport = new Thrift.Transport("127.0.0.1:9005");
+				var protocol = new Thrift.Protocol(transport);
+				var client = new authSerClient(protocol);
+
+				
+				document.getElementById("1234").innerHTML = client.Register(document.getElementsByTagName("input")[0].value,document.getElementsByTagName("input")[1].value)
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<label>用户名：</label>
+			<input type="text" name="name"/><br>
+			<label>密码:</label>
+			<input type="password" name="pwd"/><br>
+			<button type="button" onclick="go()">commit</button>
+			<p id="1234"></p>
+		</form>
+	</body>
+</html>
