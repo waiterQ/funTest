@@ -1,1 +1,1 @@
-# funTest
+# thriftTest
